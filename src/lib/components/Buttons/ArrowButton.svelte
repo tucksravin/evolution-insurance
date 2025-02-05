@@ -1,7 +1,6 @@
-<!-- @migration-task Error while migrating Svelte code: $$props is used together with named props in a way that cannot be automatically migrated. -->
-<!-- @migration-task Error while migrating Svelte code: $$props is used together with named props in a way that cannot be automatically migrated. -->
-<script>
-    import linkArrow from "$lib/assets/icons/wireframe-link-arrow-right.svg"
+
+<script lang="ts">
+    import linkArrow from "$lib/assets/icons/arrow.svg"
     export let text = "";
     export let href ="#"
 
@@ -9,13 +8,22 @@
     let isLinkArrowActive=false;
 
 </script>
+<style>
+    div{
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: 36px; /* 312.5% */
+    }
+</style>
+
 
 <a 
-on:mouseenter={()=>isLinkArrowActive=true} 
-on:mouseleave={()=>isLinkArrowActive=false}
-on:click= {()=>isLinkArrowActive=false}
-class="flex flex-row items-center text-center no-underline justify-center transition-all duration-300 active:-translate-y-2 {$$props.class || ''}" 
+onmouseenter={()=>isLinkArrowActive=true} 
+onmouseleave={()=>isLinkArrowActive=false}
+onclick= {()=>isLinkArrowActive=false}
+class="flex flex-row items-center opacity-90 hover:opacity-100 no-underline justify-start transition-all duration-300 active:-translate-y-2 h-9 {$$props.class || ''}" 
 {href}>
-    <span class="h-5 uppercase no-underline translate-y-[3.5px]">{text}</span>
-    <img src={linkArrow} alt="link arrow" class="h-5 w-5 -translate-y-[1px] ml-[10px] transition-transform duration-300 {isLinkArrowActive ? "translate-x-2":""}">
+    <div>{text}</div>
+    <img src={linkArrow} alt="link arrow" class=" ml-[10px]  duration-300 h-1/2 {isLinkArrowActive ? "":"opacity-0"}">
 </a>

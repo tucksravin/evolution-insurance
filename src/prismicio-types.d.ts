@@ -4,6 +4,718 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Item in *home → s1 images*
+ */
+export interface HomeDocumentDataS1SliderItem {
+  /**
+   * label field in *home → s1 images*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s1_slider[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * image field in *home → s1 images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s1_slider[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *home → s2 icons*
+ */
+export interface HomeDocumentDataS2IconsItem {
+  /**
+   * label field in *home → s2 icons*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s2_icons[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * icon field in *home → s2 icons*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s2_icons[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *home → s5 slider*
+ */
+export interface HomeDocumentDataS5SliderItem {
+  /**
+   * icon field in *home → s5 slider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s5_slider[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * testimonial field in *home → s5 slider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s5_slider[].testimonial
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  testimonial: prismic.KeyTextField;
+
+  /**
+   * attribution field in *home → s5 slider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s5_slider[].attribution
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  attribution: prismic.KeyTextField;
+}
+
+/**
+ * Item in *home → partners*
+ */
+export interface HomeDocumentDataPartnersItem {
+  /**
+   * logo field in *home → partners*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.partners[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *home → s7 cities*
+ */
+export interface HomeDocumentDataS7CitiesItem {
+  /**
+   * image field in *home → s7 cities*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s7_cities[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * label field in *home → s7 cities*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s7_cities[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+type HomeDocumentDataSlicesSlice = never;
+
+/**
+ * Content for home documents
+ */
+interface HomeDocumentData {
+  /**
+   * hero_image field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.hero_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * title line one field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.title_line_one
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_line_one: prismic.KeyTextField;
+
+  /**
+   * title line two field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.title_line_two
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_line_two: prismic.KeyTextField;
+
+  /**
+   * hero subtitle field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.hero_subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hero_subtitle: prismic.RichTextField;
+
+  /**
+   * hero button field in *home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.hero_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  hero_button: prismic.LinkField;
+
+  /**
+   * s1 eyebrow field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s1_eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s1_eyebrow: prismic.KeyTextField;
+
+  /**
+   * s1_body field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s1_body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  s1_body: prismic.RichTextField;
+
+  /**
+   * s1 images field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s1_slider[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  s1_slider: prismic.GroupField<Simplify<HomeDocumentDataS1SliderItem>>;
+
+  /**
+   * s1 static image field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s1_static_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s1_static_image: prismic.ImageField<never>;
+
+  /**
+   * s2 eyebrow field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s2_eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s2_eyebrow: prismic.KeyTextField;
+
+  /**
+   * s2 icons field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s2_icons[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  s2_icons: prismic.GroupField<Simplify<HomeDocumentDataS2IconsItem>>;
+
+  /**
+   * s3 icon field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s3_icon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s3_icon: prismic.ImageField<never>;
+
+  /**
+   * s3 title field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s3_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s3_title: prismic.KeyTextField;
+
+  /**
+   * s3 body field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s3_body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  s3_body: prismic.RichTextField;
+
+  /**
+   * s3 button field in *home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s3_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  s3_button: prismic.LinkField;
+
+  /**
+   * s3 image field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s3_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s3_image: prismic.ImageField<never>;
+
+  /**
+   * s4 icon field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s4_icon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s4_icon: prismic.ImageField<never>;
+
+  /**
+   * s4 title field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s4_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s4_title: prismic.KeyTextField;
+
+  /**
+   * s4 body field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s4_body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  s4_body: prismic.RichTextField;
+
+  /**
+   * s4 button field in *home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s4_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  s4_button: prismic.LinkField;
+
+  /**
+   * s4 image field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s4_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s4_image: prismic.ImageField<never>;
+
+  /**
+   * s5 background image field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s5_background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s5_background_image: prismic.ImageField<never>;
+
+  /**
+   * s5 eyebrow field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s5_eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s5_eyebrow: prismic.KeyTextField;
+
+  /**
+   * s5 slider field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s5_slider[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  s5_slider: prismic.GroupField<Simplify<HomeDocumentDataS5SliderItem>>;
+
+  /**
+   * s6 eyebrow field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s6_eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s6_eyebrow: prismic.KeyTextField;
+
+  /**
+   * s6 body field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s6_body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  s6_body: prismic.RichTextField;
+
+  /**
+   * s6 button field in *home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s6_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  s6_button: prismic.LinkField;
+
+  /**
+   * partners field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.partners[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  partners: prismic.GroupField<Simplify<HomeDocumentDataPartnersItem>>;
+
+  /**
+   * s7 eyebrow field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s7_eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s7_eyebrow: prismic.KeyTextField;
+
+  /**
+   * s7 body field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s7_body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  s7_body: prismic.RichTextField;
+
+  /**
+   * s7 button field in *home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s7_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  s7_button: prismic.LinkField;
+
+  /**
+   * s7 cities field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s7_cities[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  s7_cities: prismic.GroupField<Simplify<HomeDocumentDataS7CitiesItem>>;
+
+  /**
+   * s8 background field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s8_background
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  s8_background: prismic.ImageField<never>;
+
+  /**
+   * s8 title field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s8_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  s8_title: prismic.KeyTextField;
+
+  /**
+   * s8 button field in *home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.s8_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  s8_button: prismic.LinkField;
+
+  /**
+   * Slice Zone field in *home*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
+   * Meta Title field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * home document from Prismic
+ *
+ * - **API ID**: `home`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+
+/**
+ * Item in *nav → partners*
+ */
+export interface NavDocumentDataPartnersItem {
+  /**
+   * logo field in *nav → partners*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.partners[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *nav → visit_addresses*
+ */
+export interface NavDocumentDataVisitAddressesItem {
+  /**
+   * address field in *nav → visit_addresses*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.visit_addresses[].address
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  address: prismic.RichTextField;
+}
+
+/**
+ * Item in *nav → contact us*
+ */
+export interface NavDocumentDataContactUsItem {
+  /**
+   * bodies field in *nav → contact us*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.contact_us[].bodies
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bodies: prismic.RichTextField;
+}
+
+/**
+ * Content for nav documents
+ */
+interface NavDocumentData {
+  /**
+   * logo full field in *nav*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.logo_full
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_full: prismic.ImageField<never>;
+
+  /**
+   * logo small field in *nav*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.logo_small
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_small: prismic.ImageField<never>;
+
+  /**
+   * left link field in *nav*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.left_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  left_link: prismic.LinkField;
+
+  /**
+   * nav links field in *nav*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.nav_links
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  nav_links: prismic.Repeatable<prismic.LinkField>;
+
+  /**
+   * partners field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.partners[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  partners: prismic.GroupField<Simplify<NavDocumentDataPartnersItem>>;
+
+  /**
+   * visit_addresses field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.visit_addresses[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  visit_addresses: prismic.GroupField<
+    Simplify<NavDocumentDataVisitAddressesItem>
+  >;
+
+  /**
+   * contact us field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.contact_us[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  contact_us: prismic.GroupField<Simplify<NavDocumentDataContactUsItem>>;
+}
+
+/**
+ * nav document from Prismic
+ *
+ * - **API ID**: `nav`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<NavDocumentData>, "nav", Lang>;
+
 type PageDocumentDataSlicesSlice = RichTextSlice;
 
 /**
@@ -76,7 +788,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = PageDocument;
+export type AllDocumentTypes = HomeDocument | NavDocument | PageDocument;
 
 /**
  * Primary content in *ContentWidth → Single Col Text → Primary*
@@ -2018,6 +2730,19 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      HomeDocument,
+      HomeDocumentData,
+      HomeDocumentDataS1SliderItem,
+      HomeDocumentDataS2IconsItem,
+      HomeDocumentDataS5SliderItem,
+      HomeDocumentDataPartnersItem,
+      HomeDocumentDataS7CitiesItem,
+      HomeDocumentDataSlicesSlice,
+      NavDocument,
+      NavDocumentData,
+      NavDocumentDataPartnersItem,
+      NavDocumentDataVisitAddressesItem,
+      NavDocumentDataContactUsItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

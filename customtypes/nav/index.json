@@ -1,0 +1,102 @@
+{
+  "format": "custom",
+  "id": "nav",
+  "label": "nav",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo_full": {
+        "type": "Image",
+        "config": {
+          "label": "logo full",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "logo_small": {
+        "type": "Image",
+        "config": {
+          "label": "logo small",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "left_link": {
+        "type": "Link",
+        "config": {
+          "label": "left link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "nav_links": {
+        "type": "Link",
+        "config": {
+          "label": "nav links",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": false,
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "partners": {
+        "type": "Group",
+        "config": {
+          "label": "partners",
+          "repeat": true,
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "logo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "visit_addresses": {
+        "type": "Group",
+        "config": {
+          "label": "visit_addresses",
+          "repeat": true,
+          "fields": {
+            "address": {
+              "type": "StructuredText",
+              "config": {
+                "label": "address",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      },
+      "contact_us": {
+        "type": "Group",
+        "config": {
+          "label": "contact us",
+          "repeat": true,
+          "fields": {
+            "bodies": {
+              "type": "StructuredText",
+              "config": {
+                "label": "bodies",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -32,8 +32,9 @@ export default {
       current: 'currentColor',
       black: '#000',
       white: '#fff',
-      light:'#C2D1D9',
-      dark: '#424B5A',
+      light:'#EDEAE5',
+      dark: '#44413D',
+      primary:'#928775'
     },
     extend: {
       transitionTimingFunction: {
