@@ -40,8 +40,11 @@
 	</nav>
 	</div>
 	{@render children?.()}
-	<footer class="w-full bg-primary text-white md: py-8 md:py-12 min-h-screen flex flex-col justify-between relative z-20">
-		<ContentWidth class="flex flex-col md:flex-row">
+	<footer class="w-full bg-primary text-white md: py-8 md:py-12  relative z-20">
+		<ContentWidth class="h-full relative min-h-screen flex flex-col justify-between">
+			<div class="hidden lg:block absolute h-full w-[13px] bg-dark left-0 -translate-x-[400%]"></div>
+		<div class="flex flex-col md:flex-row relative w-full">
+			
 			<div class="flex flex-col md:w-1/4 gap-16">
 				<a href='/' class="hover:opacity-80 transition h-4 md:h-6 w-fit"><PrismicImage class="bump w-fit h-full" field={nav.logo_small} /></a>
 				<div class="w-full flex flex-col gap-8">
@@ -72,8 +75,10 @@
 					{/if}
 				{/each}
 			</div>
-		</ContentWidth>
-		<ContentWidth class="flex flex-col md:flex-row items-center">
+		</div>
+		<div class="flex flex-col md:flex-row items-center relative w-full">
+	
+			
 			<div class="flex flex-col md:w-1/4 text-light">
 				<div class="label">Copyright © {new Date().getFullYear()} <br/> Evolution Insurance Partners </div>
 	
@@ -83,6 +88,7 @@
 					<PrismicImage class="h-12 w-fit" field={partner.logo} />
 				{/each}
 			</div>
+		</div>
 		</ContentWidth>
 		
 
