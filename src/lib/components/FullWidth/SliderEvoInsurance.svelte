@@ -31,14 +31,13 @@
           
 
 
-          
-          console.log(sliderIndex)
+    
       }
       const slideLeft = () => {
           sliderIndex++;
           clearInterval(sliderInterval);
           sliderInterval = setInterval(()=>slideLeft(), SLIDER_INTERVAL_IN_MS);
-          console.log(sliderIndex)
+       
 
       }
 
