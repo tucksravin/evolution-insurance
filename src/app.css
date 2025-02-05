@@ -13,6 +13,7 @@ body{
     overflow-x: clip;
     scrollbar-width: none !important;
     overflow-y: auto;
+    background-color: #EDEAE5;;
 }
 
 body::-webkit-scrollbar { 
@@ -84,7 +85,7 @@ button{
 }
 
 h1{
-font-size: 150px;
+font-size: 125px;
 font-style: normal;
 font-weight: 400;
 line-height: 150px; /* 100% */
@@ -133,8 +134,8 @@ text-transform: uppercase;
 }
 
 p{
-    font-family: 'Lora', serif;
-    font-weight: 300;
+    font-family: "freight-text-pro", serif;
+    font-weight: 400;
     font-size: 16px;
     line-height:1.5em;
 }

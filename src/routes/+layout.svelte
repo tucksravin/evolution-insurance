@@ -30,7 +30,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 </svelte:head>
 <main>
-	<div class="fixed top-0 left-0 w-screen p-4 h-24">
+	<div class="fixed top-0 left-0 w-screen p-4 h-24 z-10">
 	<nav class="h-full w-full bg-dark text-white flex items-center justify-end md:justify-between rounded relative p-4">
 		{#if isFilled.link(nav.left_link)}
 			<a class="hidden md:block bump " href={nav.left_link.url}><h5 class="hover:opacity-80 transition">{nav.left_link.text}</h5></a>
@@ -40,7 +40,7 @@
 	</nav>
 	</div>
 	{@render children?.()}
-	<footer class="w-full bg-primary text-white md: py-8 md:py-12 min-h-screen flex flex-col justify-between relative">
+	<footer class="w-full bg-primary text-white md: py-8 md:py-12 min-h-screen flex flex-col justify-between relative z-20">
 		<ContentWidth class="flex flex-col md:flex-row">
 			<div class="flex flex-col md:w-1/4 gap-16">
 				<a href='/' class="hover:opacity-80 transition h-4 md:h-6 w-fit"><PrismicImage class="bump w-fit h-full" field={nav.logo_small} /></a>

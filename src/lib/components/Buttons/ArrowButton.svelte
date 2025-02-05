@@ -25,5 +25,5 @@ onclick= {()=>isLinkArrowActive=false}
 class="flex flex-row items-center opacity-90 hover:opacity-100 no-underline justify-start transition-all duration-300 active:-translate-y-2 h-9 {$$props.class || ''}" 
 {href}>
     <div>{text}</div>
-    <img src={linkArrow} alt="link arrow" class=" ml-[10px]  duration-300 h-1/2 {isLinkArrowActive ? "":"opacity-0"}">
+    <img src={linkArrow} alt="link arrow" class=" ml-[10px]  duration-300 h-1/2 -translate-y-[2px] {isLinkArrowActive ? "":"opacity-0"}">
 </a>

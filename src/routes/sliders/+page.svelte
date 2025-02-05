@@ -12,8 +12,9 @@
   import { swipe } from "svelte-gestures";
   import { fade } from "svelte/transition";
   import ScreenWidthImageSlider from "$lib/components/ScreenWidth/ScreenWidthImageSlider.svelte";
+  import type { SwipePointerEventDetail } from "svelte-gestures";
   
-  let innerWidth:number = $state();  
+  let innerWidth:number = $state(1024);  
   
   let imageArray = [placeholder, placeholder, placeholder, placeholder];
   let showImage=true;
@@ -80,7 +81,7 @@
   
       let sliderInterval:NodeJS.Timeout;
   
-      const handleSwipe = (e:CustomEvent<{ direction: "left" | "top" | "right" | "bottom"; target: EventTarget; }>) => {
+      const handleSwipe = (e:CustomEvent<SwipePointerEventDetail>) => {
         if(e.detail.direction==="left") 
           slideLeft();
   
