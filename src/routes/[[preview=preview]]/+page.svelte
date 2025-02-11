@@ -96,18 +96,18 @@ let sliderIndex = $state(0);
 				<div class="mt-6 md:mt-0 w-64 flex flex-col gap-6">
 					<PrismicRichText field={content.s1_body} />
 				</div>
-				<div class="flex flex-col md:flex-row w-full aspect-video">
+				<div class="flex flex-col md:flex-row w-full">
 					<div class="w-full md:w-2/3 relative aspect-[4/3]">
 						<SliderEvoInsurance contentArray={content.s1_slider}/>
 					</div>
-					<PrismicImage field={content.s1_static_image} class=" mt-24 md:mt-0 aspect-[3/4] md:aspect-auto w-full md:w-1/3 md:pl-6 object-cover"/>
+					<PrismicImage field={content.s1_static_image} class=" mt-24 md:mt-0 w-full aspect-[3/4] md:w-1/3 md:pl-6 object-cover"/>
 				</div>
 
 			</div>
 
 		</div>
 	</ContentWidth>
-	<ContentWidth class="relative">
+	<ContentWidth class="relative -z-10">
 		<div class="hidden lg:block absolute h-full w-[13px] bg-primary left-0 -translate-x-[400%]"></div>
 		<div class="h-52"></div>
 		<div class="flex flex-col md:flex-row">
@@ -127,7 +127,7 @@ let sliderIndex = $state(0);
 							<PrismicImage field={content.s3_icon} class="w-14"/>
 							<h3 class="mt-3">{content.s3_title}</h3>
 						</div>
-						<div class="flex flex-col gap-3">
+						<div class="flex flex-col gap-3 mt-6 md:mt-0">
 							<PrismicRichText field={content.s3_body} />
 							{#if isFilled.link(content.s3_button)}
 								<DefaultButton class="w-fit" href={content.s3_button.url}>{content.s3_button.text}</DefaultButton>
@@ -142,7 +142,7 @@ let sliderIndex = $state(0);
 							<PrismicImage field={content.s4_icon} class="w-14"/>
 							<h3 class="mt-3">{content.s4_title}</h3>
 						</div>
-						<div class="flex flex-col gap-3">
+						<div class="flex flex-col gap-3 mt-6 md:mt-0">
 							<PrismicRichText field={content.s4_body} />
 							{#if isFilled.link(content.s4_button)}
 								<DefaultButton class="w-fit" href={content.s4_button.url}>{content.s4_button.text}</DefaultButton>
@@ -160,9 +160,9 @@ let sliderIndex = $state(0);
 </section>
 
 <ScreenWidthImage field={content.s5_background_image} class="flex items-center justify-end">
-	<div class="bg-white aspect-[4/3] w-full lg:w-1/2 p-10 flex flex-col justify-between" use:swipe onswipe={handleSwipe}>
+	<div class="bg-white lg:aspect-[4/3] w-full lg:w-1/2 p-10 flex flex-col justify-between" use:swipe onswipe={handleSwipe}>
 		<div class="w-full h-14 flex flex-row justify-between items-center">
-			<h4 class="text-primary xl:pr-16">{content.s5_eyebrow}</h4>
+			<h4 class="text-primary xl:pr-16 w-1/2">{content.s5_eyebrow}</h4>
 			<div class="relative h-20 w-20">
 			{#key sliderIndex}
 			<div out:fade in:fade={{delay:500}} class="absolute w-full h-full left-0 top-0">
@@ -172,9 +172,9 @@ let sliderIndex = $state(0);
 			</div>
 		</div>
 		<div class="flex flex-col text-dark gap-8">
-			<div class="h-2/3 relative">
+			<div class="max-h-2/3 h-[320px] relative">
 			{#key sliderIndex}
-				<h3 out:fade in:fade={{delay:500}} class="w-4/5 absolute bottom-0 left-0">{content.s5_slider[getPositiveIndex(sliderIndex, content.s5_slider.length)].testimonial}</h3>
+				<h3 out:fade in:fade={{delay:500}} class="md:w-4/5 absolute bottom-0 left-0">{content.s5_slider[getPositiveIndex(sliderIndex, content.s5_slider.length)].testimonial}</h3>
 			{/key}
 			</div>
 			<div class="flex flex-row justify-between h-14 items-center">
@@ -199,7 +199,7 @@ let sliderIndex = $state(0);
 		<div class="hidden lg:block absolute h-full w-[13px] bg-primary left-0 -translate-x-[400%]"></div>
 		<div class="flex flex-col md:flex-row">
 			<h4 class="md:w-1/4 md:pr-4 xl:pr-16">{content.s6_eyebrow}</h4>
-			<div class="flex flex-col gap-3 md:w-1/4 md:pr-4">
+			<div class="flex flex-col gap-3 md:w-1/4 md:pr-4 mt-6 md:mt-0">
 				<PrismicRichText field={content.s6_body} />
 				{#if isFilled.link(content.s6_button)}
 					<DefaultButton class="w-fit" href={content.s6_button.url}>{content.s6_button.text}</DefaultButton>
@@ -220,28 +220,28 @@ let sliderIndex = $state(0);
 		<div class="flex flex-col md:flex-row w-full text-dark">
 			<h4 class="md:w-1/4 md:pr-4 xl:pr-16">{content.s7_eyebrow}</h4>
 			<div class="flex flex-col gap-3 md:w-3/4 md:pr-4">
-				<div class="w-1/3 flex flex-col gap-3">
+				<div class="md:w-1/3 flex flex-col gap-3 mt-6 md:mt-0">
 					<PrismicRichText field={content.s7_body} />
 					{#if isFilled.link(content.s7_button)}
 						<DefaultButton class="w-fit" href={content.s7_button.url}>{content.s7_button.text}</DefaultButton>
 					{/if}
 				</div>
-				<div class="w-full flex flex-col md:flex-row mt-8">
+				<div class="w-full flex flex-col md:flex-row mt-8 gap-6 md:gap-0">
 					{#each content.s7_cities as city}
 					<div class="w-full md:w-1/3 md:pr-8 flex flex-col gap-3">
 						<PrismicImage class="w-full aspect-[3/4]" field={city.image} />
 						<span class="label text-primary">{city.label}</span>
 					</div>
 					{/each}
-
+ 
 				</div>
 			</div>
 		</div>
 		
-		<div class="w-full aspect-video relative text-white">
-			<PrismicImage class="absolute w-full h-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover -z-10" field={content.s8_background}/>
-			<div class="w-full h-full p-20 flex flex-col items-start justify-end gap-12">
-				<h2 class="w-1/2">{content.s8_title}</h2>
+		<div class="w-full aspect-[9/16] md:aspect-video relative text-white">
+			<PrismicImage class="absolute w-full h-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover -z-10" field={content.s8_background} imgixParams={{auto:["format"]}}/>
+			<div class="w-full h-full p-8 lg:p-20 flex flex-col items-start justify-end gap-12">
+				<h2 class="lg:w-1/2">{content.s8_title}</h2>
 				{#if isFilled.link(content.s8_button)}
 						<DefaultButton class="w-fit" href={content.s8_button.url}>{content.s8_button.text}</DefaultButton>
 				{/if}

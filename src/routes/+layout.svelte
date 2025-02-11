@@ -7,12 +7,13 @@
   import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
   import ContentWidth from '$lib/components/ContentWidth/ContentWidth.svelte';
   import ArrowButton from '$lib/components/Buttons/ArrowButton.svelte';
+  import { fly} from 'svelte/transition';
 
 	let { children, data } = $props();
 
 	const nav = data.nav.data
 
-	let showMenu=false;
+	let showMenu=$state(false);
 </script>
 
 <svelte:head>
@@ -29,19 +30,39 @@
 	{/if}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 </svelte:head>
-<main>
+{#if showMenu}
+<div class="h-screen w-screen fixed z-30 bg-primary text-white left-0 top-0" transition:fly={{x:'100%'}}>
+	
+	<ContentWidth class="h-full relative">
+		<button aria-label="close nav" onclick={()=>showMenu=false} class="absolute top-12 right-0"><i class="fa-sharp fa-solid fa-close"></i></button>
+		<div class="flex flex-col md:w-3/4 py-24 items-start justify-center gap-8">
+			<h4>Explore</h4>
+			{#each nav.nav_links as link}
+				{#if isFilled.link(link)}
+				<div>
+					<ArrowButton text={link.text} href={link.url} />
+				</div>
+				{/if}
+			{/each}
+		</div>
+	</ContentWidth>
+
+</div>
+{/if}
+<main class={showMenu?"pointer-events-none":""}>
 	<div class="fixed top-0 left-0 w-screen p-4 h-24 z-10">
 	<nav class="h-full w-full bg-dark text-white flex items-center justify-end md:justify-between rounded relative p-4">
 		{#if isFilled.link(nav.left_link)}
 			<a class="hidden md:block bump " href={nav.left_link.url}><h5 class="hover:opacity-80 transition">{nav.left_link.text}</h5></a>
 		{/if}
-		<button onclick={()=>showMenu=!showMenu} class="flex flex-row items-center justify-end gap-4 hover:opacity-80 transition"><h5 class="bump hidden md:block">Menu</h5><i class="bump fa-sharp fa-solid fa-bars fa-xl -translate-y-[2px]" ></i> </button>
+		<button onclick={()=>showMenu=true} class="flex flex-row items-center justify-end gap-4 hover:opacity-80 transition"><h5 class="bump hidden md:block">Menu</h5><i class="bump fa-sharp fa-solid fa-bars fa-xl -translate-y-[2px]" ></i> </button>
 		<a href='/' class="absolute hover:opacity-80 transition left-4 md:left-1/2 top-1/2 md:-translate-x-1/2 -translate-y-1/2 h-4 md:h-6 w-fit"><PrismicImage class="bump w-fit h-full" field={nav.logo_full} /></a>
 	</nav>
 	</div>
+
 	{@render children?.()}
-	<footer class="w-full bg-primary text-white md: py-8 md:py-12  relative z-20">
-		<ContentWidth class="h-full relative min-h-screen flex flex-col justify-between">
+	<footer class="w-full bg-primary text-white pt-36 pb-4  relative">
+		<ContentWidth class="h-full relative min-h-[50vh] flex flex-col justify-between">
 			<div class="hidden lg:block absolute h-full w-[13px] bg-dark left-0 -translate-x-[400%]"></div>
 		<div class="flex flex-col md:flex-row relative w-full">
 			
@@ -76,7 +97,7 @@
 				{/each}
 			</div>
 		</div>
-		<div class="flex flex-col md:flex-row items-center relative w-full">
+		<div class="flex flex-col md:flex-row items-center relative w-full mt-36">
 	
 			
 			<div class="flex flex-col md:w-1/4 text-light">

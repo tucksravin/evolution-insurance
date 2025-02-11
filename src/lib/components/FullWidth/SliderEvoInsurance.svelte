@@ -76,7 +76,7 @@
 
 <div use:swipe onswipe={handleSwipe} class="absolute w-full h-full left-0 top-0 text-primary">
     {#key sliderIndex}
-        <div out:fade={{duration:300}} in:fade={{delay:500, duration:300}} class="absolute w-full h-full left-0 top-0">
+        <div out:fade={{delay:500,duration:300}} in:fade={{ duration:300}} class="absolute w-full h-full left-0 top-0">
           
             <PrismicImage class="h-full w-full object-cover" loading="eager" field={contentArray[getPositiveIndex(sliderIndex, contentArray.length)].image}/>
                 
