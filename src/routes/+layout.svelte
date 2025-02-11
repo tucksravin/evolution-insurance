@@ -61,7 +61,7 @@
 	</div>
 
 	{@render children?.()}
-	<footer class="w-full bg-primary text-white pt-36 pb-4  relative">
+	<footer class="w-full bg-primary text-white pt-36 pb-12  relative">
 		<ContentWidth class="h-full relative min-h-[50vh] flex flex-col justify-between">
 			<div class="hidden lg:block absolute h-full w-[13px] bg-dark left-0 -translate-x-[400%]"></div>
 		<div class="flex flex-col md:flex-row relative w-full">
