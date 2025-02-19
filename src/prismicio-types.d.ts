@@ -606,21 +606,6 @@ export interface NavDocumentDataVisitAddressesItem {
 }
 
 /**
- * Item in *nav → contact us*
- */
-export interface NavDocumentDataContactUsItem {
-  /**
-   * bodies field in *nav → contact us*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav.contact_us[].bodies
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  bodies: prismic.RichTextField;
-}
-
-/**
  * Content for nav documents
  */
 interface NavDocumentData {
@@ -693,15 +678,26 @@ interface NavDocumentData {
   >;
 
   /**
-   * contact us field in *nav*
+   * telephone field in *nav*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: nav.contact_us[]
+   * - **API ID Path**: nav.telephone
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  contact_us: prismic.GroupField<Simplify<NavDocumentDataContactUsItem>>;
+  telephone: prismic.KeyTextField;
+
+  /**
+   * mailingAddress field in *nav*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.mailingaddress
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  mailingaddress: prismic.RichTextField;
 }
 
 /**
@@ -2742,7 +2738,6 @@ declare module "@prismicio/client" {
       NavDocumentData,
       NavDocumentDataPartnersItem,
       NavDocumentDataVisitAddressesItem,
-      NavDocumentDataContactUsItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

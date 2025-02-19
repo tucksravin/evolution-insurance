@@ -68,26 +68,28 @@
 			
 			<div class="flex flex-col md:w-1/4 gap-16">
 				<a href='/' class="hover:opacity-80 transition h-4 md:h-6 w-fit"><PrismicImage class="bump w-fit h-full" field={nav.logo_small} /></a>
-				<div class="w-full flex flex-col gap-8">
-					<h4>Visit Us</h4>
+				<div class="w-full flex flex-col gap-4">
+					<h5>Visit Us</h5>
 					{#each nav.visit_addresses as addy }
 					<div>
 						<PrismicRichText field={addy.address} />
 					</div>
 					{/each}
 				</div>
-				<div class="w-full flex flex-col gap-8">
-					<h4>Contact Us</h4>
-					{#each nav.contact_us as addy }
+				<div class="w-full flex flex-col gap-4">
+					<h5>Contact Us</h5>
+					<p>{nav.telephone}</p>
+				</div>
+				<div class="w-full flex flex-col gap-4">
+					<h5>Mailing Address</h5>
 					<div>
-						<PrismicRichText field={addy.bodies} />
+						<PrismicRichText field={nav.mailingaddress} />
 					</div>
-					{/each}
 				</div>
 	
 			</div>
 			<div class="flex flex-col md:w-3/4 items-start gap-8">
-				<h4>Explore</h4>
+				<h5>Explore</h5>
 				{#each nav.nav_links as link}
 					{#if isFilled.link(link)}
 					<div>

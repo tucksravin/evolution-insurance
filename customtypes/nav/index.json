@@ -79,22 +79,20 @@
           }
         }
       },
-      "contact_us": {
-        "type": "Group",
+      "telephone": {
+        "type": "Text",
         "config": {
-          "label": "contact us",
-          "repeat": true,
-          "fields": {
-            "bodies": {
-              "type": "StructuredText",
-              "config": {
-                "label": "bodies",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            }
-          }
+          "label": "telephone",
+          "placeholder": ""
+        }
+      },
+      "mailingaddress": {
+        "type": "StructuredText",
+        "config": {
+          "label": "mailingAddress",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
         }
       }
     }
