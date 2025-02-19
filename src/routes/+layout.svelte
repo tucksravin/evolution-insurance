@@ -88,7 +88,7 @@
 				</div>
 	
 			</div>
-			<div class="flex flex-col md:w-3/4 items-start gap-8">
+			<div class="flex flex-col md:w-3/4 items-start gap-8 mt-16 md:mt-0">
 				<h5>Explore</h5>
 				{#each nav.nav_links as link}
 					{#if isFilled.link(link)}
@@ -99,16 +99,16 @@
 				{/each}
 			</div>
 		</div>
-		<div class="flex flex-col md:flex-row items-center relative w-full mt-36">
+		<div class="flex flex-col-reverse items-start md:flex-row md:items-center relative w-full mt-16 md:mt-36">
 	
 			
-			<div class="flex flex-col md:w-1/4 text-light">
+			<div class="flex flex-col md:w-1/4 text-light mt-16 md:mt-0">
 				<div class="label">Copyright © {new Date().getFullYear()} <br/> Evolution Insurance Partners </div>
 	
 			</div>
-			<div class="flex flex-col md:flex-row gap-16 md:w-3/4">
+			<div class="flex flex-col md:flex-row gap-16 md:w-3/4 ">
 				{#each nav.partners as partner}
-					<PrismicImage class="h-12 w-fit" field={partner.logo} />
+					<PrismicImage class="h-16 md:h-12 w-fit" field={partner.logo} />
 				{/each}
 			</div>
 		</div>
